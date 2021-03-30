@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "0357CA44-980F-43A2-BF01-DD9F2CB21809"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "86F8D13F-96C6-4FE8-AE29-36C57D287042"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4792C2CE-801B-4138-A00E-21B2B37ACB48"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AimHigh/Controllers/SignUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "signUpTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0920E4E3-0DBA-4BF7-88A8-31EF6E050CD3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AimHigh/Views/GoalBreakDownTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "GoalBreakDownTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0920E4E3-0DBA-4BF7-88A8-31EF6E050CD3 - 688fb97c7f4931e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AimHigh.GoalBreakDownTableViewCell.delegate.getter : Swift.Optional&lt;AimHigh.GoalBreakDownDelegate&gt;"
+                  moduleName = "AimHigh"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordyvazquez/Desktop/AimHigh-master%202/AimHigh/AimHigh/Views/GoalBreakDownTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "91">
+               </Location>
+               <Location
+                  uuid = "0920E4E3-0DBA-4BF7-88A8-31EF6E050CD3 - 419ca6df041cc1a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AimHigh.GoalBreakDownTableViewCell.delegate.setter : Swift.Optional&lt;AimHigh.GoalBreakDownDelegate&gt;"
+                  moduleName = "AimHigh"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordyvazquez/Desktop/AimHigh-master%202/AimHigh/AimHigh/Views/GoalBreakDownTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "0920E4E3-0DBA-4BF7-88A8-31EF6E050CD3 - 1aed2c3e810a0acc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AimHigh.GoalBreakDownTableViewCell.delegate.modify : Swift.Optional&lt;AimHigh.GoalBreakDownDelegate&gt;"
+                  moduleName = "AimHigh"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordyvazquez/Desktop/AimHigh-master%202/AimHigh/AimHigh/Views/GoalBreakDownTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "0920E4E3-0DBA-4BF7-88A8-31EF6E050CD3 - e73d57ce8c78df0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AimHigh.GoalBreakDownTableViewCell.delegate.modify : Swift.Optional&lt;AimHigh.GoalBreakDownDelegate&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "AimHigh"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordyvazquez/Desktop/AimHigh-master%202/AimHigh/AimHigh/Views/GoalBreakDownTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "0920E4E3-0DBA-4BF7-88A8-31EF6E050CD3 - 87d8c8ce02741d63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AimHigh.GoalBreakDownTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; AimHigh.GoalBreakDownTableViewCell"
+                  moduleName = "AimHigh"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordyvazquez/Desktop/AimHigh-master%202/AimHigh/AimHigh/Views/GoalBreakDownTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "986">
+               </Location>
+               <Location
+                  uuid = "0920E4E3-0DBA-4BF7-88A8-31EF6E050CD3 - 621ba53069357a77"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AimHigh.GoalBreakDownTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;AimHigh.GoalBreakDownTableViewCell&gt;"
+                  moduleName = "AimHigh"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordyvazquez/Desktop/AimHigh-master%202/AimHigh/AimHigh/Views/GoalBreakDownTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "947">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E49ED74-4872-471D-9D3F-C9D122151D6D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AimHigh/Views/DetailOfGoalsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C566AC23-B4A4-4590-B61D-2DAB0F503A88"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AimHigh/Views/GoalBreakDownTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "doneButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
