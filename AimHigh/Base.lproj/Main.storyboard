@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pFu-lU-KW1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pFu-lU-KW1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -721,7 +721,7 @@
                                         </constraints>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <action selector="loginTapped:" destination="eDa-A0-6aB" eventType="touchUpInside" id="JAP-Jm-Lbl"/>
+                                            <action selector="loginTapped:" destination="eDa-A0-6aB" eventType="touchUpInside" id="64e-xM-u9N"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeZ-hR-p7a">
@@ -750,7 +750,7 @@
                     <connections>
                         <outlet property="emailTextFiel" destination="LV5-HJ-6Qh" id="8jq-Qu-Zms"/>
                         <outlet property="errorLabel" destination="oeZ-hR-p7a" id="V7b-Zl-pEJ"/>
-                        <outlet property="loginButton" destination="Utg-17-Uha" id="o5z-ah-aHS"/>
+                        <outlet property="loginButton" destination="Utg-17-Uha" id="CJ4-h6-wG3"/>
                         <outlet property="passwordTextFiel" destination="tGd-2V-Ocz" id="7sm-YL-mfH"/>
                     </connections>
                 </viewController>
@@ -810,8 +810,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="qTs-8s-Uns"/>
                     <connections>
-                        <outlet property="loginButton" destination="h3A-vf-Hsy" id="U9y-Gt-Wvm"/>
-                        <outlet property="signUpButton" destination="Cmi-gE-IAh" id="7bm-lO-wVF"/>
+                        <outlet property="loginButton" destination="h3A-vf-Hsy" id="YxI-c6-E8Y"/>
+                        <outlet property="signUpButton" destination="Cmi-gE-IAh" id="iCA-IN-r2F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56F-ck-VQF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
