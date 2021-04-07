@@ -69,12 +69,34 @@ class SignupFomrModelValidatorTest: XCTestCase {
         
     }
     
-    func testingSingupFormMode_WhenEmailProvidedWithCorrectCredentials_ShouldRerturnTrue() {
+    func testingSingupFormModel_WhenEmailProvidedWithCorrectCredentials_ShouldRerturnTrue() {
         // ACT
         let isEmailValid = sut.isEmailValid(email: "jordy@test.com")
         
         //Assert
         XCTAssertTrue(isEmailValid, "The email provided should return true if has the correct credintials, if it returns false there is something worng with he email provided")
+    }
+    
+    func testingSingupFormModel_WhenPasswordIsProvided_ShouldReturnTrue() {
+        // Act
+        let isValidPassword = sut.isPasswordValid(password:"123456")
+        //Assert
+        XCTAssertTrue(isValidPassword, "isPasswordValid() no password has been provided")
+    }
+    
+    func testingSingupFormModel_WhenPasswordIsProvidedIsTooShort_ShouldReturnFalse() {
+        // Act
+        let isValidPassword = sut.isPasswordValid(password:"1234")
+        
+        //Assert
+        XCTAssertFalse(isValidPassword, "isPasswordValid() if password provided is too short it should return false, else it shoudl return True if the password is long than the \(SignupConstants.passwordMinLength)")
+    }
+    
+    func testingSingupFormModel_WhenPasswordIsProvidedIsTooLong_ShouldReturnFalse() {
+        // Act
+        let isValidPassword = sut.isPasswordValid(password:"123456789123456789876")
+        //Assert
+        XCTAssertFalse(isValidPassword, "isPasswordValid() password provided is too long it should return False, else it should return TRUE if the password is shorten than \(SignupConstants.passwordMaxLength)")
     }
 
 }

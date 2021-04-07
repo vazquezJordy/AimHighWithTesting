@@ -12,6 +12,8 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     
+    var signupViewModel = [SignupViewModel]()
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!

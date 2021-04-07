@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
         passwordTextFiel.text = "abcd@1234"
        setUpElements()
     }
+    
+   
     func setUpElements() {
         errorLabel.alpha = 0
         
@@ -49,6 +51,4 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    
 }
