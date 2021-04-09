@@ -29,3 +29,37 @@ struct SignupViewModel {
         self.password = signupFormModel.password
     }
 }
+
+
+enum ValidationError: LocalizedError {
+    case invalidValue
+    case passwordTooLong
+    case passwordTooShort
+    case firstNameTooLong
+    case firstNameTooShort
+    case lastNameTooLong
+    case lastNameTooShort
+    case emailInvalid
+    
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidValue:
+        return "You have entered an invalid value"
+        case .passwordTooLong:
+        return "The password you have entered is too SHORT"
+        case .passwordTooShort:
+          return "The password you have entered is too LONG"
+        case .firstNameTooLong:
+            return "The user name you have entered is too SHORT"
+        case .firstNameTooShort:
+           return "The user name you have entered is too LONG"
+        case .emailInvalid:
+            return "Invalid email"
+        case .lastNameTooLong:
+            return "Last name is too LONG"
+        case .lastNameTooShort:
+            return "Last name is too SHORT"
+        }
+    }
+}

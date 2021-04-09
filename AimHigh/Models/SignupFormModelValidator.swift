@@ -10,36 +10,29 @@ import Foundation
 
 class SingupFormModelValidator {
     
-    func isFirstNamevalid(firstName: String) -> Bool {
-        var returnedValue = true
-        
-        if firstName.count < SignupConstants.firstNameMinLength || firstName.count > SignupConstants.firstNameMaxLength {
-            returnedValue = false
-            
-        }
-        return returnedValue
+    func isFirstNamevalid(firstName: String?) throws -> String {
+        guard let firstName = firstName else { throw ValidationError.invalidValue }
+        guard firstName.count <= SignupConstants.firstNameMinLength else {throw ValidationError.firstNameTooShort}
+        guard firstName.count >= SignupConstants.firstNameMaxLength else {throw ValidationError.firstNameTooLong}
+        return firstName
     }
     
-    func isLastNameValid(lastName: String) -> Bool {
-        var returnedValue = true
-        if lastName.count < SignupConstants.lastNameMinLength || lastName.count > SignupConstants.lastNameMaxLength {
-            returnedValue = false
-        }
-        return returnedValue
+    func isLastNameValid(lastName: String?) throws -> String {
+        guard let lastName = lastName else { throw ValidationError.invalidValue}
+        guard lastName.count <= SignupConstants.lastNameMinLength else {throw ValidationError.lastNameTooShort}
+        guard lastName.count >= SignupConstants.lastNameMaxLength else {throw ValidationError.lastNameTooLong}
+        return lastName
     }
     
     func isEmailValid(email: String) -> Bool {
         return NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: email)
-        
     }
-    func isPasswordValid(password: String) -> Bool {
-        var returnedValue = true
-        
-        if password.count < SignupConstants.passwordMinLength || password.count > SignupConstants.passwordMaxLength{
-            returnedValue = false
-        }
-        return returnedValue
+    
+    func isPasswordValid(password: String?)throws -> String {
+        guard let password = password else {throw ValidationError.invalidValue}
+        guard password.count <= SignupConstants.passwordMinLength else {throw ValidationError.passwordTooShort}
+        guard password.count >= SignupConstants.passwordMaxLength else {throw ValidationError.passwordTooShort}
+        return password
     }
 }
-
 
