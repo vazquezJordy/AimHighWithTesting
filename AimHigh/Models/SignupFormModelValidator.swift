@@ -8,12 +8,12 @@
 
 import Foundation
 
-class SingupFormModelValidator {
+struct SingupFormValidator {
     
     func isFirstNamevalid(firstName: String?) throws -> String {
         guard let firstName = firstName else { throw ValidationError.invalidValue }
-        guard firstName.count <= SignupConstants.firstNameMinLength else {throw ValidationError.firstNameTooShort}
-        guard firstName.count >= SignupConstants.firstNameMaxLength else {throw ValidationError.firstNameTooLong}
+        guard firstName.count >= SignupConstants.firstNameMinLength else {throw ValidationError.firstNameTooShort}
+        guard firstName.count <= SignupConstants.firstNameMaxLength else {throw ValidationError.firstNameTooLong}
         return firstName
     }
     

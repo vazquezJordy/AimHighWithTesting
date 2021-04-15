@@ -30,7 +30,6 @@ class LoginViewController: UIViewController {
         super.init(coder: coder)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextFiel.text = "jvaazque@noman.com"

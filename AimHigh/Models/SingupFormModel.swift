@@ -51,9 +51,9 @@ enum ValidationError: LocalizedError {
         case .passwordTooShort:
           return "The password you have entered is too LONG"
         case .firstNameTooLong:
-            return "The user name you have entered is too SHORT"
+            return "The user name you have entered is too LONG"
         case .firstNameTooShort:
-           return "The user name you have entered is too LONG"
+           return "The user name you have entered is too SHORT"
         case .emailInvalid:
             return "Invalid email"
         case .lastNameTooLong:

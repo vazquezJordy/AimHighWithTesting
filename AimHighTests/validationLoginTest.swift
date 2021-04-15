@@ -38,5 +38,33 @@ class validationLoginTest: XCTestCase {
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
+    func test_Is_password_Too_Short() throws {
+        let expectedError = ValidationError.passwordTooShort
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try validation.validatePassword(password: "abc")){
+            throwError in error = throwError as? ValidationError
+        }
+        
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+    }
+    
+    func test_Is_password_Too_Long() throws {
+        let expectedError = ValidationError.passwordTooLong
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try validation.validatePassword(password: "This password Should Be Too Long")){
+            throwError in error = throwError as? ValidationError
+        }
+        
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+    }
+    
+//    func  test_Login_Button_Tapped() {
+//        let sut =
+//    }
 }

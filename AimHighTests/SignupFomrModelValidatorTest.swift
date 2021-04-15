@@ -4,46 +4,61 @@
 //
 //  Created by Jordy Vazquez on 3/29/21.
 //  Copyright © 2021 Jordy Vazquez. All rights reserved.
-//
-//
-//import XCTest
-//@testable import AimHigh
-//
-//class SignupFomrModelValidatorTest: XCTestCase {
-//
-//    var sut: SingupFormModelValidator!
-//
-//    override func setUpWithError() throws {
-//        // Put setup code here. This method is called before the invocation of each test method in the class.
-//        sut = SingupFormModelValidator()
-//    }
-//
-//    override func tearDownWithError() throws {
-//        // Put teardown code here. This method is called after the invocation of each test method in the class.
-//        sut = nil
-//    }
-//    func testSignupFormMode_WhenValidFirstNameProvided_ShouldReturnTrue() {
-//        //Arrange
-//
-//        //ACT
-//        let isFirstNameValid = sut.isFirstNamevalid(firstName: "Jordy")
-//        //Asser
-//        XCTAssertTrue(isFirstNameValid, "If isFirstNameValid() returns true its correct, if it returns falls the user has nothing inserted or the text inserted it too long" )
-//    }
-//    func testSignupFormMode_WhenValidFirstNameProvidedIsTooShort_ShouldReturnFalse() {
-//        // ACT
-//        let isFirstNameValid = sut.isFirstNamevalid(firstName: "J")
-//        // Assert
-//        XCTAssertFalse(isFirstNameValid, "isFirstNameValid should return False if the last name is shorter than \(SignupConstants.firstNameMinLength)")
-//    }
-//
-//    func testSignupFormMode_WhenValidFirstNameProvidedIsTooLong_ShouldReturnFalse() {
-//        // ACT
-//        let isFirstNameValid = try! sut.isFirstNamevalid(firstName: "JordyVazquezJordyVazquez")
-//        // Assert
-//        XCTAssertFalse(isFirstNameValid, "isFirstNameValid should return False if the last name is Longer than \(SignupConstants.firstNameMaxLength)")
-//
-//    }
+
+
+import XCTest
+@testable import AimHigh
+
+class SignupFomrModelValidatorTest: XCTestCase {
+
+    var sut: SingupFormValidator!
+
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = SingupFormValidator()
+    }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+    }
+    
+    func testSignupFormValidator_WhenValidFirstNameProvided() {
+        XCTAssertNoThrow(try sut.isFirstNamevalid(firstName: "JordyV"))
+    }
+    
+    func testSignupFormValidator_WhenFirstNameProvided_IsNill(){
+        let expectedError = ValidationError.invalidValue
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try sut.isFirstNamevalid(firstName: nil)) {
+            trownError in error = trownError as? ValidationError
+        }
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+    }
+    
+    func testSignupFormValidator_WhenValidFirstNameProvided_IsTooShort() {
+        let expectedError = ValidationError.firstNameTooShort
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try sut.isFirstNamevalid(firstName: "a")) {
+            thrownError in error = thrownError as? ValidationError
+        }
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+    }
+
+    func testSignupFormValidator_WhenValidFirstNameProvidedIsTooLong() {
+        let expectedError = ValidationError.firstNameTooLong
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try sut.isFirstNamevalid(firstName: "This  first name is way too long")) {
+            thrownError in error = thrownError as? ValidationError
+        }
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+    }
 //
 //    func testSignupFormModel_WhenValidLastNameProvided_ShouldReturnTrue() {
 //
@@ -98,5 +113,5 @@
 //        //Assert
 //        XCTAssertFalse(isValidPassword, "isPasswordValid() password provided is too long it should return False, else it should return TRUE if the password is shorten than \(SignupConstants.passwordMaxLength)")
 //    }
-//
-//}
+
+}
