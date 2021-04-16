@@ -59,59 +59,55 @@ class SignupFomrModelValidatorTest: XCTestCase {
         XCTAssertEqual(expectedError, error)
         XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
-//
-//    func testSignupFormModel_WhenValidLastNameProvided_ShouldReturnTrue() {
-//
-//        // ACT
-//        let lastNameIsValid = sut.isLastNameValid(lastName: "Vazquez")
-//
-//        XCTAssertTrue(lastNameIsValid, "If isFirstNameValid() returns TRUE it is okay, Else if it returns FALSE, the it is emptey or too long")
-//    }
-//    func testSignupFormModel_WhenValidLastNameProvidedIsTooShort_ShouldReturnFalse() {
-//        //ACT
-//        let islastNameIsValid = sut.isLastNameValid(lastName: "Vaz")
-//
-//        // Assert
-//        XCTAssertFalse(islastNameIsValid, "isFirstNameValid should return False if the last name is shorter than \(SignupConstants.lastNameMinLength)" )
-//    }
-//
-//    func testSignupFormModel_WhenValidLastNameProvidedIsTooLong_ShouldReturnFalse() {
-//        // ACT
-//        let isLastNameValid = sut.isLastNameValid(lastName: "VazquezJordyVazquezJordyVazquez")
-//
-//        //Assert
-//        XCTAssertFalse(isLastNameValid, "isFirstNameValid should return False if the last name is shorter than \(SignupConstants.lastNameMaxLength)")
-//
-//    }
-//
-//    func testingSingupFormModel_WhenEmailProvidedWithCorrectCredentials_ShouldRerturnTrue() {
-//        // ACT
-//        let isEmailValid = sut.isEmailValid(email: "jordy@test.com")
-//
-//        //Assert
-//        XCTAssertTrue(isEmailValid, "The email provided should return true if has the correct credintials, if it returns false there is something worng with he email provided")
-//    }
-//
-//    func testingSingupFormModel_WhenPasswordIsProvided_ShouldReturnTrue() {
-//        // Act
-//        let isValidPassword = sut.isPasswordValid(password:"123456")
-//        //Assert
-//        XCTAssertTrue(isValidPassword, "isPasswordValid() no password has been provided")
-//    }
-//
-//    func testingSingupFormModel_WhenPasswordIsProvidedIsTooShort_ShouldReturnFalse() {
-//        // Act
-//        let isValidPassword = sut.isPasswordValid(password:"1234")
-//
-//        //Assert
-//        XCTAssertFalse(isValidPassword, "isPasswordValid() if password provided is too short it should return false, else it shoudl return True if the password is long than the \(SignupConstants.passwordMinLength)")
-//    }
-//
-//    func testingSingupFormModel_WhenPasswordIsProvidedIsTooLong_ShouldReturnFalse() {
-//        // Act
-//        let isValidPassword = sut.isPasswordValid(password:"123456789123456789876")
-//        //Assert
-//        XCTAssertFalse(isValidPassword, "isPasswordValid() password provided is too long it should return False, else it should return TRUE if the password is shorten than \(SignupConstants.passwordMaxLength)")
-//    }
+
+    func testSignupFormMValidator_WhenValidLastNameProvided() {
+        
+        XCTAssertNoThrow( try sut.isLastNameValid(lastName: "Vazquez"))
+
+    }
+    
+    func testSignupFormValidator_WhenLastName_Is_Nill() {
+        let expectedError = ValidationError.invalidValue
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try sut.isLastNameValid(lastName: nil)) {
+            thrownError in error = thrownError as? ValidationError
+        }
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+    }
+    
+    func testSignupFormMValidator_WhenValidLastNameProvidedIsTooShort() {
+        let expectedError = ValidationError.lastNameTooShort
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try sut.isLastNameValid(lastName: "123")){
+            thrownError in error = thrownError as? ValidationError
+        }
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+        
+    }
+
+    func testSignupFormMValidator_WhenValidLastNameProvidedIsTooLong_ShouldReturnFalse() {
+      
+
+    }
+
+    func testingSingupFormMValidator_WhenEmailProvidedWithCorrectCredentials_ShouldRerturnTrue() {
+    
+    }
+
+    func testingSingupFormMValidator_WhenPasswordIsProvided_ShouldReturnTrue() {
+
+    }
+
+    func testingSingupFormMValidator_WhenPasswordIsProvidedIsTooShort_ShouldReturnFalse() {
+        
+    }
+
+    func testingSingupFormValidator_WhenPasswordIsProvidedIsTooLong_ShouldReturnFalse() {
+  
+    }
 
 }

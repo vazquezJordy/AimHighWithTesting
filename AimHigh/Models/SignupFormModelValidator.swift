@@ -19,8 +19,8 @@ struct SingupFormValidator {
     
     func isLastNameValid(lastName: String?) throws -> String {
         guard let lastName = lastName else { throw ValidationError.invalidValue}
-        guard lastName.count <= SignupConstants.lastNameMinLength else {throw ValidationError.lastNameTooShort}
-        guard lastName.count >= SignupConstants.lastNameMaxLength else {throw ValidationError.lastNameTooLong}
+        guard lastName.count >= SignupConstants.lastNameMinLength else {throw ValidationError.lastNameTooShort}
+        guard lastName.count <= SignupConstants.lastNameMaxLength else {throw ValidationError.lastNameTooLong}
         return lastName
     }
     
@@ -30,8 +30,8 @@ struct SingupFormValidator {
     
     func isPasswordValid(password: String?)throws -> String {
         guard let password = password else {throw ValidationError.invalidValue}
-        guard password.count <= SignupConstants.passwordMinLength else {throw ValidationError.passwordTooShort}
-        guard password.count >= SignupConstants.passwordMaxLength else {throw ValidationError.passwordTooShort}
+        guard password.count >= SignupConstants.passwordMinLength else {throw ValidationError.passwordTooShort}
+        guard password.count <= SignupConstants.passwordMaxLength else {throw ValidationError.passwordTooShort}
         return password
     }
 }
