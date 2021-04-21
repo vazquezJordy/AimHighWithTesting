@@ -9,13 +9,13 @@
 import XCTest
 @testable import AimHigh
 
-class SignupFomrModelValidatorTest: XCTestCase {
+class SignupFormModelValidatorTest: XCTestCase {
 
-    var sut: SingupFormValidator!
+    var sut: SignupFormValidator!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        sut = SingupFormValidator()
+        sut = SignupFormValidator()
     }
 
     override func tearDownWithError() throws {
@@ -89,25 +89,63 @@ class SignupFomrModelValidatorTest: XCTestCase {
         
     }
 
-    func testSignupFormMValidator_WhenValidLastNameProvidedIsTooLong_ShouldReturnFalse() {
-      
+    func testSignupFormMValidator_WhenValidLastNameProvidedIsTooLong() {
+        let expectedError = ValidationError.lastNameTooLong
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try sut.isLastNameValid(lastName: "This is too long Do do nor accept it")) {
+            thrownError in error = thrownError as? ValidationError
+        }
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
 
     }
 
-    func testingSingupFormMValidator_WhenEmailProvidedWithCorrectCredentials_ShouldRerturnTrue() {
+    func testingSingupFormMValidator_WhenEmailProvidedWithCorrectCredentials() {
+        
+        var emailValidation = sut.isEmailValid(email: "jordy.vazquez@gmail.com")
+        
+        XCTAssertTrue(emailValidation, "If it returns FALSE the requirements for email are not being met")
     
     }
 
-    func testingSingupFormMValidator_WhenPasswordIsProvided_ShouldReturnTrue() {
-
+    func test_Is_Password_Valid() throws {
+        XCTAssertNoThrow(try sut.isPasswordValid(password: "abc@1234ee"))
     }
-
-    func testingSingupFormMValidator_WhenPasswordIsProvidedIsTooShort_ShouldReturnFalse() {
+    
+    func test_Is_Password_Nil() throws {
+        let expectedError = ValidationError.invalidValue
+        var error: ValidationError?
         
+        XCTAssertThrowsError(try sut.isPasswordValid(password: nil)) {
+            thrownError in
+            error = thrownError as? ValidationError
+        }
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
-
-    func testingSingupFormValidator_WhenPasswordIsProvidedIsTooLong_ShouldReturnFalse() {
-  
+    func test_Is_password_Too_Short() throws {
+        let expectedError = ValidationError.passwordTooShort
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try sut.isPasswordValid(password: "abc")){
+            throwError in error = throwError as? ValidationError
+        }
+        
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+    }
+    
+    func test_Is_password_Too_Long() throws {
+        let expectedError = ValidationError.passwordTooLong
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try sut.isPasswordValid(password: "1234567901234567890123")) {
+            throwError in error = throwError as? ValidationError
+        }
+        
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
 
 }

@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import AimHigh
+
 class validationLoginTest: XCTestCase {
     
     var validation: SignInValidationService!
@@ -64,7 +65,12 @@ class validationLoginTest: XCTestCase {
         XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
     
-//    func  test_Login_Button_Tapped() {
-//        let sut =
-//    }
+    func testingSingupFormMValidator_WhenEmailProvidedWithCorrectCredentials() {
+        
+        let emailValidation = validation.validateEmail(email: "jordy.vazquez@gmail.com")
+        
+        XCTAssertTrue(emailValidation, "If it returns FALSE the requirements for email are not being met")
+    
+    }
+
 }

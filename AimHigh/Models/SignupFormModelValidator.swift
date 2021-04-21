@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SingupFormValidator {
+struct SignupFormValidator {
     
     func isFirstNamevalid(firstName: String?) throws -> String {
         guard let firstName = firstName else { throw ValidationError.invalidValue }
@@ -31,7 +31,7 @@ struct SingupFormValidator {
     func isPasswordValid(password: String?)throws -> String {
         guard let password = password else {throw ValidationError.invalidValue}
         guard password.count >= SignupConstants.passwordMinLength else {throw ValidationError.passwordTooShort}
-        guard password.count <= SignupConstants.passwordMaxLength else {throw ValidationError.passwordTooShort}
+        guard password.count <= SignupConstants.passwordMaxLength else {throw ValidationError.passwordTooLong}
         return password
     }
 }

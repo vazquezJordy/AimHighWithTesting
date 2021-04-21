@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
         
         let email = emailTextFiel.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = try! signInValidation.validatePassword(password: passwordTextFiel.text!) 
-        print(email)
+        
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
                 self.errorLabel.text = error!.localizedDescription

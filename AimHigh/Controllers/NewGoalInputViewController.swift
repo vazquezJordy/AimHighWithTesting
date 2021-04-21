@@ -80,13 +80,7 @@ class NewGoalInputViewController: UIViewController, UINavigationControllerDelega
             deleteButton.isHidden = true
             changeImageButton.isHidden = true
         }
-        
-        
-        
         db = Firestore.firestore()
-        
-        // Do any additional setup after loading the view.
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         updateButton.layer.borderWidth = 2

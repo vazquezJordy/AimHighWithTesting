@@ -12,14 +12,24 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     
-    var signupViewModel = [SignupViewModel]()
-    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var singUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    
+    private let signupFormValidator: SignupFormValidator
+    
+    init(signupFormValidator: SignupFormValidator) {
+        self.signupFormValidator = signupFormValidator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.signupFormValidator = SignupFormValidator()
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,41 +68,29 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
-        //        Validate the fields
-        let error = validateFields()
-        
-        if error != nil {
-            //            something went wrong
-            showError(error!)
-            
-        } else {
-            let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        let firstName = try! signupFormValidator.isFirstNamevalid(firstName: firstNameTextField.text!)
+        let lastName = try! signupFormValidator.isLastNameValid(lastName: lastNameTextField.text!)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = try! signupFormValidator.isPasswordValid(password: passwordTextField.text!)
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-//                check errors
-                 if err != nil {
+                //                check errors
+                if err != nil {
                     self.showError("Error creating user")
                 } else {
                     AppDelegate.userID = result?.user.uid ?? ""
-                   let db = Firestore.firestore()
+                    let db = Firestore.firestore()
                     db.collection("users").addDocument(data: ["firstName":firstName,
                                                               "lastName": lastName,
                                                               "uid": result?.user.uid]) { (error) in
-                                                                if error != nil {
-                                                                    print("Error saving user data")
-                                                                }
+                        if error != nil {
+                            print("Error saving user data")
+                        }
                     }
                     self.transitionToHome()
                 }
             }
-        }
         
-        //        create the user
-        
-        
-        //        Transition to the home screen
     }
     func transitionToHome() {
         let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as! OpeningGoalsPageTableViewController
