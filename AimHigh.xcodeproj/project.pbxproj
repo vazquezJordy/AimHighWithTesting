@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F4A8D065385B944E1B7F060 /* Pods_AimHigh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85DC309B94B919025A27E582 /* Pods_AimHigh.framework */; };
 		60233A2B262FCFCB00611B2F /* GoalInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60233A2A262FCFCB00611B2F /* GoalInputForm.swift */; };
+		60233A2F263287EF00611B2F /* GoalInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60233A2E263287EF00611B2F /* GoalInputForm.swift */; };
 		6049B0EB2493BCD00060E07C /* GoalItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049B0EA2493BCD00060E07C /* GoalItems.swift */; };
 		6049B0ED2496CE2C0060E07C /* NewGoalInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049B0EC2496CE2C0060E07C /* NewGoalInputViewController.swift */; };
 		6049B0EF2496CECA0060E07C /* DetailOfGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049B0EE2496CECA0060E07C /* DetailOfGoalsViewController.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		60233A2A262FCFCB00611B2F /* GoalInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalInputForm.swift; sourceTree = "<group>"; };
+		60233A2E263287EF00611B2F /* GoalInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalInputForm.swift; sourceTree = "<group>"; };
 		6049B0EA2493BCD00060E07C /* GoalItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalItems.swift; sourceTree = "<group>"; };
 		6049B0EC2496CE2C0060E07C /* NewGoalInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalInputViewController.swift; sourceTree = "<group>"; };
 		6049B0EE2496CECA0060E07C /* DetailOfGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOfGoalsViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				6069BA102612DF2F00974DCC /* Info.plist */,
 				6069BA182612E03E00974DCC /* SignupFormModelValidatorTest.swift */,
 				609C31E926200272006AF2DB /* validationLoginTest.swift */,
+				60233A2E263287EF00611B2F /* GoalInputForm.swift */,
 			);
 			path = AimHighTests;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60233A2F263287EF00611B2F /* GoalInputForm.swift in Sources */,
 				609C31EA26200272006AF2DB /* validationLoginTest.swift in Sources */,
 				6069BA192612E03E00974DCC /* SignupFormModelValidatorTest.swift in Sources */,
 			);

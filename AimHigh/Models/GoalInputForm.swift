@@ -15,6 +15,10 @@ struct GoalInputForm {
             throw
             GoalInputError.nameOfGoalTooShort
         }
+        guard nameOfGoal.count <= GoalFormConstants.nameOfGoalMaxLength else {
+            throw GoalInputError.nameOfGoalTooLong
+        }
         return nameOfGoal
     }
+    
 }
