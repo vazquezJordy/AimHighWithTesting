@@ -58,14 +58,14 @@ class OpeningGoalsPageTableViewController: UITableViewController {
                     guard docSnapshot["goalImage"] != nil else {print("The is no image"); continue}
                     guard let imageOutData = docSnapshot["goalImage"] as? String else {print(" I'm not a string... My type is \(type(of: docSnapshot["goalImage"]!))"); continue}
                     let date = docSnapshot["date"] as? Date ?? Date()
-                    let reasonForGoal1 = docSnapshot["reasonForGoal1"] as? String ?? "No value"
+                    let reason1input = docSnapshot["reasonForGoal1"] as? String ?? "No value"
                     let reasonForGoal2 = docSnapshot["reasonForGoal2"] as? String ?? "No value"
                     let reasonForGoal3 = docSnapshot["reasonForGoal3"] as? String ?? "No value"
                     let image = self.converBase64StringToImage(imageBase64String: imageOutData)
                     
                     let documentID = docSnapshot.documentID
                     
-                    let newObject = GoalStructure(nameOfGoal: nameOfGoalOutPut, imageGoal: image, reasonsForGoal: [reasonForGoal1, reasonForGoal2, reasonForGoal3], date: date, documentID: documentID)
+                    let newObject = GoalStructure(nameOfGoal: nameOfGoalOutPut, imageGoal: image, reasonsForGoal: [reason1input, reasonForGoal2, reasonForGoal3], date: date, documentID: documentID)
                     
                     self.goalStructure.append(newObject)
                 }

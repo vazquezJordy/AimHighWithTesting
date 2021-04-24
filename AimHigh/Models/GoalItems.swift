@@ -13,9 +13,9 @@ struct GoalStructure {
     let nameOfGoal: String?
     let imageGoal: UIImage?
     let reasonsForGoal: [String]
-    let reason1Input: String?
-    let reason2Input: String?
-    let reason3Input: String?
+//    let reason1Input: String?
+//    let reason2Input: String?
+//    let reason3Input: String?
     let date: Date?
     var documentID: String
 }
@@ -24,9 +24,9 @@ struct GoalInputStructure {
     let nameOfGoal: String?
     let imageGoal: UIImage?
     let reasonsForGoal: [String]
-    let reason1Input: String?
-    let reason2Input: String?
-    let reason3Input: String?
+//    let reason1Input: String?
+//    let reason2Input: String?
+//    let reason3Input: String?
     let date: Date?
     var documentID: String
     
@@ -36,9 +36,9 @@ struct GoalInputStructure {
         self.reasonsForGoal = goalStructure.reasonsForGoal
         self.date = goalStructure.date
         self.documentID = goalStructure.documentID
-        self.reason1Input = goalStructure.reason1Input
-        self.reason2Input = goalStructure.reason2Input
-        self.reason3Input = goalStructure.reason3Input
+//        self.reason1Input = goalStructure.reason1Input
+//        self.reason2Input = goalStructure.reason2Input
+//        self.reason3Input = goalStructure.reason3Input
     }
 }
 
